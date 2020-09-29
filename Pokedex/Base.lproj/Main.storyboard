@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17124"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -65,32 +65,28 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MXa-Wq-Syk">
-                                            <rect key="frame" x="27" y="35" width="125" height="110"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="MXa-Wq-Syk" secondAttribute="height" multiplier="1:1" id="Tbs-uy-bfZ"/>
-                                            </constraints>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jlD-zM-zbG">
                                             <rect key="frame" x="80.5" y="153" width="17" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b65-ps-RwL">
+                                            <rect key="frame" x="-25" y="27" width="240" height="128"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="MXa-Wq-Syk" firstAttribute="centerY" secondItem="Fyk-Cu-MFr" secondAttribute="centerY" id="6cj-vA-VNM"/>
                                         <constraint firstItem="byY-LK-2t5" firstAttribute="top" secondItem="Fyk-Cu-MFr" secondAttribute="top" constant="8" id="CAV-z8-TYM"/>
                                         <constraint firstItem="byY-LK-2t5" firstAttribute="centerX" secondItem="Fyk-Cu-MFr" secondAttribute="centerX" id="DDT-B7-xHJ"/>
                                         <constraint firstAttribute="bottom" secondItem="jlD-zM-zbG" secondAttribute="bottom" constant="8" id="JWg-x4-Em3"/>
-                                        <constraint firstItem="MXa-Wq-Syk" firstAttribute="centerX" secondItem="Fyk-Cu-MFr" secondAttribute="centerX" id="LrR-dg-tSv"/>
                                         <constraint firstItem="jlD-zM-zbG" firstAttribute="centerX" secondItem="Fyk-Cu-MFr" secondAttribute="centerX" id="PW9-zX-b8w"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="178" height="182"/>
                                 <connections>
                                     <outlet property="pokemonID" destination="jlD-zM-zbG" id="k1l-jf-U1b"/>
-                                    <outlet property="pokemonImage" destination="MXa-Wq-Syk" id="bwE-Lj-qwb"/>
+                                    <outlet property="pokemonImage" destination="b65-ps-RwL" id="Wzf-zw-DIA"/>
                                     <outlet property="pokemonName" destination="byY-LK-2t5" id="14b-3h-nKx"/>
                                 </connections>
                             </collectionViewCell>

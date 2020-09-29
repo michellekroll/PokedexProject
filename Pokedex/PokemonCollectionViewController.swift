@@ -50,9 +50,13 @@ class PokemonCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CollectionViewCell
         let cellIndex = indexPath.item
-        //cell.pokemonImage.image =
-        cell.pokemonName.text = pokemons[cellIndex].name
-        cell.pokemonID.text = "#" + String(pokemons[cellIndex].id)
+        let pokemon = pokemons[cellIndex]
+        print(pokemon.imageUrl)
+        if let url = URL(string: pokemon.imageUrl) {
+            cell.pokemonImage.load(url: url)
+        }
+        cell.pokemonName.text = pokemon.name
+        cell.pokemonID.text = "#" + String(pokemon.id)
         return cell
     }
 
@@ -87,4 +91,18 @@ class PokemonCollectionViewController: UICollectionViewController {
     }
     
 
+}
+
+extension UIImageView {
+    func load(url: URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
+    }
 }
