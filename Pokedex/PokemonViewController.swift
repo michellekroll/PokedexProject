@@ -7,13 +7,21 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class PokemonViewController: UIViewController {
 
+    @IBOutlet weak var switchView: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func switchViews(_ sender: UISwitch) {
+        
+        if !sender.isOn {
+            
+        }
+    }
+    
 }
 
