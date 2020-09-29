@@ -19,7 +19,7 @@ class PokemonViewController: UIViewController {
     @IBAction func switchViews(_ sender: UISwitch) {
         
         if !sender.isOn {
-            
+            performSegue(withIdentifier: "switchViews", sender: UISwitch.self)
         }
     }
     
