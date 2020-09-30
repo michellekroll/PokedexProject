@@ -17,9 +17,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p0Q-qi-3j9">
-                                <rect key="frame" x="291" y="138" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lVV-Hr-5Vl">
+                                <rect key="frame" x="0.0" y="174" width="414" height="688"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tablecell" id="5zZ-P1-0gZ" customClass="TableViewCell" customModule="Pokedex" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5zZ-P1-0gZ" id="qVG-LO-IZX">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcQ-l6-gas">
+                                                    <rect key="frame" x="20" y="12" width="42" height="20"/>
+                                                    <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6FD-8M-15b">
+                                                    <rect key="frame" x="87" y="-42" width="240" height="128"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhK-kb-7Ps">
+                                                    <rect key="frame" x="352" y="12" width="42" height="20"/>
+                                                    <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6FD-8M-15b" firstAttribute="centerY" secondItem="qVG-LO-IZX" secondAttribute="centerY" id="Ssc-WR-ZgQ"/>
+                                                <constraint firstItem="tcQ-l6-gas" firstAttribute="leading" secondItem="qVG-LO-IZX" secondAttribute="leadingMargin" id="V5R-18-zyk"/>
+                                                <constraint firstItem="6FD-8M-15b" firstAttribute="centerX" secondItem="qVG-LO-IZX" secondAttribute="centerX" id="ZmA-dk-JbK"/>
+                                                <constraint firstItem="uhK-kb-7Ps" firstAttribute="centerY" secondItem="qVG-LO-IZX" secondAttribute="centerY" id="oH5-wc-UAd"/>
+                                                <constraint firstItem="uhK-kb-7Ps" firstAttribute="trailing" secondItem="qVG-LO-IZX" secondAttribute="trailingMargin" id="pXe-Wv-z7D"/>
+                                                <constraint firstItem="tcQ-l6-gas" firstAttribute="centerY" secondItem="qVG-LO-IZX" secondAttribute="centerY" id="tIL-nb-lOk"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="tableID" destination="uhK-kb-7Ps" id="LIg-4J-7lX"/>
+                                            <outlet property="tableImage" destination="6FD-8M-15b" id="GsP-Ib-97r"/>
+                                            <outlet property="tableName" destination="tcQ-l6-gas" id="lly-bf-WtI"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p0Q-qi-3j9">
+                                <rect key="frame" x="280" y="93" width="49" height="31"/>
                                 <connections>
                                     <action selector="switchViews:" destination="BYZ-38-t0r" eventType="valueChanged" id="Zwh-gV-HfK"/>
                                 </connections>
@@ -27,15 +70,26 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lVV-Hr-5Vl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PGV-XE-Gj2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lVV-Hr-5Vl" secondAttribute="trailing" id="R02-Ua-lgv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="p0Q-qi-3j9" secondAttribute="trailing" constant="87" id="jLB-dO-M9z"/>
+                            <constraint firstItem="lVV-Hr-5Vl" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="nhN-RP-9Fy"/>
+                            <constraint firstItem="lVV-Hr-5Vl" firstAttribute="top" secondItem="p0Q-qi-3j9" secondAttribute="bottom" constant="50" id="uwA-4x-QEp"/>
+                            <constraint firstItem="p0Q-qi-3j9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="49" id="wVR-sv-NXd"/>
+                            <constraint firstItem="p0Q-qi-3j9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="280" id="xD2-JF-r6g"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lVV-Hr-5Vl" secondAttribute="bottom" id="ykN-cu-gLN"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="switchView" destination="p0Q-qi-3j9" id="m4C-Be-Rza"/>
+                        <outlet property="tableView" destination="lVV-Hr-5Vl" id="CYc-OB-UhP"/>
                         <segue destination="4WP-fa-HKh" kind="presentation" identifier="switchViews" modalPresentationStyle="fullScreen" id="Gb6-QZ-lcx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="94"/>
+            <point key="canvasLocation" x="34.782608695652179" y="93.75"/>
         </scene>
         <!--Pokemon Collection View Controller-->
         <scene sceneID="So7-pj-uBQ">
