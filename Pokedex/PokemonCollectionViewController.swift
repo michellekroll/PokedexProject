@@ -55,8 +55,21 @@ class PokemonCollectionViewController: UICollectionViewController {
         if let url = URL(string: pokemon.imageUrl) {
             cell.pokemonImage.load(url: url)
         }
+        
         cell.pokemonName.text = pokemon.name
         cell.pokemonID.text = "#" + String(pokemon.id)
+        cell.contentView.layer.cornerRadius = 15
+        cell.contentView.layer.borderWidth = 2.0
+        cell.contentView.layer.borderColor = UIColor.black.cgColor
+        cell.contentView.layer.masksToBounds = true
+        cell.backgroundColor = UIColor.systemGray5
+        cell.layer.shadowColor = UIColor.gray.cgColor
+        cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        cell.layer.shadowRadius = 2.0
+        cell.layer.shadowOpacity = 0.0
+        cell.layer.masksToBounds = false
+        cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
+        
         return cell
     }
 
@@ -104,5 +117,29 @@ extension UIImageView {
                 }
             }
         }
+    }
+}
+
+extension PokemonCollectionViewController : UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let bounds = collectionView.bounds
+        let heightVal = self.view.frame.height
+        let widthVal = self.view.frame.width
+        let cellsize = (heightVal < widthVal) ?  bounds.height/2 : bounds.width/2
+        
+        return CGSize(width: cellsize - 10   , height:  cellsize - 10  )
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
     }
 }
