@@ -20,6 +20,7 @@
 		176832EB2522E1530027311F /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176832E82522E1530027311F /* Pokemon.swift */; };
 		176832F32522E30E0027311F /* PokemonCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176832F22522E30E0027311F /* PokemonCollectionViewController.swift */; };
 		17C7D329252304A70062FBF8 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7D328252304A70062FBF8 /* CollectionViewCell.swift */; };
+		17EE5BF4252465CB004A72D4 /* CollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EE5BF3252465CB004A72D4 /* CollectionReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		176832E82522E1530027311F /* Pokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		176832F22522E30E0027311F /* PokemonCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCollectionViewController.swift; sourceTree = "<group>"; };
 		17C7D328252304A70062FBF8 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		17EE5BF3252465CB004A72D4 /* CollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionReusableView.swift; sourceTree = "<group>"; };
 		17F6A00E25230DBB00859C1C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +118,7 @@
 				176832B72522E1170027311F /* PokemonViewController.swift */,
 				176832B92522E1170027311F /* Main.storyboard */,
 				17C7D328252304A70062FBF8 /* CollectionViewCell.swift */,
+				17EE5BF3252465CB004A72D4 /* CollectionReusableView.swift */,
 				176832BC2522E11B0027311F /* Assets.xcassets */,
 				176832BE2522E11B0027311F /* LaunchScreen.storyboard */,
 				176832F22522E30E0027311F /* PokemonCollectionViewController.swift */,
@@ -271,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				176832EB2522E1530027311F /* Pokemon.swift in Sources */,
+				17EE5BF4252465CB004A72D4 /* CollectionReusableView.swift in Sources */,
 				176832B82522E1170027311F /* PokemonViewController.swift in Sources */,
 				176832EA2522E1530027311F /* PokemonGenerator.swift in Sources */,
 				17C7D329252304A70062FBF8 /* CollectionViewCell.swift in Sources */,
