@@ -61,15 +61,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p0Q-qi-3j9">
-                                <rect key="frame" x="280" y="93" width="49" height="31"/>
-                                <connections>
-                                    <action selector="switchViews:" destination="BYZ-38-t0r" eventType="valueChanged" id="Zwh-gV-HfK"/>
-                                </connections>
-                            </switch>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ky2-YV-dqU">
-                                <rect key="frame" x="148" y="93" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ky2-YV-dqU">
+                                <rect key="frame" x="281" y="94" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="toGridView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cfZ-Tj-d8B"/>
@@ -80,21 +73,18 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="lVV-Hr-5Vl" firstAttribute="top" secondItem="ky2-YV-dqU" secondAttribute="bottom" constant="50" id="7lb-zi-aZG"/>
                             <constraint firstItem="lVV-Hr-5Vl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PGV-XE-Gj2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lVV-Hr-5Vl" secondAttribute="trailing" id="R02-Ua-lgv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="p0Q-qi-3j9" secondAttribute="trailing" constant="87" id="jLB-dO-M9z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ky2-YV-dqU" secondAttribute="trailing" constant="87" id="fRW-WT-ggs"/>
                             <constraint firstItem="lVV-Hr-5Vl" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="nhN-RP-9Fy"/>
-                            <constraint firstItem="lVV-Hr-5Vl" firstAttribute="top" secondItem="p0Q-qi-3j9" secondAttribute="bottom" constant="50" id="uwA-4x-QEp"/>
-                            <constraint firstItem="p0Q-qi-3j9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="49" id="wVR-sv-NXd"/>
-                            <constraint firstItem="p0Q-qi-3j9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="280" id="xD2-JF-r6g"/>
+                            <constraint firstItem="ky2-YV-dqU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="vYE-7X-zbo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lVV-Hr-5Vl" secondAttribute="bottom" id="ykN-cu-gLN"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="switchView" destination="p0Q-qi-3j9" id="m4C-Be-Rza"/>
                         <outlet property="switchtoGrid" destination="ky2-YV-dqU" id="Q6E-KQ-GnA"/>
                         <outlet property="tableView" destination="lVV-Hr-5Vl" id="CYc-OB-UhP"/>
-                        <segue destination="4WP-fa-HKh" kind="presentation" identifier="switchViews" modalPresentationStyle="fullScreen" id="Gb6-QZ-lcx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -169,9 +159,6 @@
             <point key="canvasLocation" x="776.81159420289862" y="102.45535714285714"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="akE-Qm-4cb"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
