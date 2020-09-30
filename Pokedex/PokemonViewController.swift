@@ -9,6 +9,7 @@ import UIKit
 
 class PokemonViewController: UIViewController {
 
+    @IBOutlet weak var switchtoGrid: UIButton!
     @IBOutlet weak var switchView: UISwitch!
     @IBOutlet var tableView: UITableView!
     var pokemons: [Pokemon] = PokemonGenerator.getPokemonArray()
@@ -19,6 +20,9 @@ class PokemonViewController: UIViewController {
         
     }
 
+    @IBAction func toGridView(_ sender: UIButton) {
+        performSegue(withIdentifier: "toGrid", sender: self)
+    }
     @IBAction func switchViews(_ sender: UISwitch) {
         
         if !sender.isOn {
