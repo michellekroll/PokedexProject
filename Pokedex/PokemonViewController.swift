@@ -9,6 +9,7 @@ import UIKit
 
 class PokemonViewController: UIViewController {
 
+    @IBOutlet weak var pokedexTitle: UIImageView!
     @IBOutlet weak var switchtoGrid: UIButton!
     @IBOutlet var tableView: UITableView!
     var pokemons: [Pokemon] = PokemonGenerator.getPokemonArray()

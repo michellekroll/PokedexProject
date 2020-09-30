@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lVV-Hr-5Vl">
-                                <rect key="frame" x="0.0" y="174" width="414" height="688"/>
+                                <rect key="frame" x="0.0" y="179" width="414" height="683"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tablecell" id="5zZ-P1-0gZ" customClass="TableViewCell" customModule="Pokedex" customModuleProvider="target">
@@ -61,29 +61,40 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ky2-YV-dqU">
-                                <rect key="frame" x="281" y="94" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ky2-YV-dqU">
+                                <rect key="frame" x="334" y="89" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="4QS-RX-S5P"/>
+                                    <constraint firstAttribute="height" constant="50" id="AyL-uI-9bV"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="gridimage"/>
                                 <connections>
                                     <action selector="toGridView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cfZ-Tj-d8B"/>
                                     <segue destination="4WP-fa-HKh" kind="presentation" identifier="toGrid" modalPresentationStyle="fullScreen" id="akE-Qm-4cb"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pokedex" translatesAutoresizingMaskIntoConstraints="NO" id="hyP-5i-LME">
+                                <rect key="frame" x="26.5" y="70" width="361" height="88"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="lVV-Hr-5Vl" firstAttribute="top" secondItem="ky2-YV-dqU" secondAttribute="bottom" constant="50" id="7lb-zi-aZG"/>
-                            <constraint firstItem="lVV-Hr-5Vl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PGV-XE-Gj2"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lVV-Hr-5Vl" secondAttribute="trailing" id="R02-Ua-lgv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ky2-YV-dqU" secondAttribute="trailing" constant="87" id="fRW-WT-ggs"/>
-                            <constraint firstItem="lVV-Hr-5Vl" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="nhN-RP-9Fy"/>
-                            <constraint firstItem="ky2-YV-dqU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="vYE-7X-zbo"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lVV-Hr-5Vl" secondAttribute="bottom" id="ykN-cu-gLN"/>
+                            <constraint firstItem="lVV-Hr-5Vl" firstAttribute="top" secondItem="hyP-5i-LME" secondAttribute="bottom" constant="21" id="DmH-mg-4Yk"/>
+                            <constraint firstItem="lVV-Hr-5Vl" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="GNs-ZA-2MI"/>
+                            <constraint firstItem="ky2-YV-dqU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="aeN-cg-dL6"/>
+                            <constraint firstItem="hyP-5i-LME" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bAi-gf-mQt"/>
+                            <constraint firstItem="lVV-Hr-5Vl" firstAttribute="top" secondItem="ky2-YV-dqU" secondAttribute="bottom" constant="40" id="hOZ-c7-bT0"/>
+                            <constraint firstItem="lVV-Hr-5Vl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="irj-9N-FP7"/>
+                            <constraint firstItem="hyP-5i-LME" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="26" id="rKE-JR-1db"/>
+                            <constraint firstItem="lVV-Hr-5Vl" firstAttribute="top" secondItem="ky2-YV-dqU" secondAttribute="bottom" constant="40" id="tav-DW-nl7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ky2-YV-dqU" secondAttribute="trailing" constant="30" id="zR2-To-fqm"/>
+                            <constraint firstItem="lVV-Hr-5Vl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zee-Kx-kM5"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="switchtoGrid" destination="ky2-YV-dqU" id="Q6E-KQ-GnA"/>
+                        <outlet property="pokedexTitle" destination="hyP-5i-LME" id="bmH-iU-fYD"/>
+                        <outlet property="switchtoGrid" destination="ky2-YV-dqU" id="Qb9-rR-Tsj"/>
                         <outlet property="tableView" destination="lVV-Hr-5Vl" id="CYc-OB-UhP"/>
                     </connections>
                 </viewController>
@@ -160,6 +171,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Pokedex" width="361" height="129"/>
+        <image name="gridimage" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
