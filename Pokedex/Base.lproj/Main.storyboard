@@ -96,6 +96,7 @@
                         <outlet property="pokedexTitle" destination="hyP-5i-LME" id="bmH-iU-fYD"/>
                         <outlet property="switchtoGrid" destination="ky2-YV-dqU" id="Qb9-rR-Tsj"/>
                         <outlet property="tableView" destination="lVV-Hr-5Vl" id="CYc-OB-UhP"/>
+                        <segue destination="LMY-N6-H51" kind="presentation" identifier="toDetails" modalPresentationStyle="fullScreen" id="c7U-Jq-5Vl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -164,15 +165,166 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="Yu7-oA-8CB"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toTable" modalPresentationStyle="fullScreen" id="GBf-ha-fln"/>
+                        <segue destination="LMY-N6-H51" kind="presentation" identifier="toDetails2" modalPresentationStyle="fullScreen" id="WgA-hq-ang"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x4F-cE-Bju" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="776.81159420289862" y="102.45535714285714"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="KEX-gR-qGF">
+            <objects>
+                <viewController id="LMY-N6-H51" customClass="DetailViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Aua-eT-NXa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lku-ou-cRZ">
+                                <rect key="frame" x="177" y="783" width="60" height="27.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="8fK-pj-9Cn"/>
+                                    <constraint firstAttribute="height" constant="30" id="G43-aD-Ajg"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" backgroundImage="arrowshape.turn.up.backward" catalog="system">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                    <color key="titleShadowColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="toGrid:" destination="LMY-N6-H51" eventType="touchUpInside" id="6lv-bv-Yy3"/>
+                                    <action selector="toTable:" destination="LMY-N6-H51" eventType="touchUpInside" id="9tX-R4-8xV"/>
+                                    <segue destination="4WP-fa-HKh" kind="presentation" identifier="backtoGrid" modalPresentationStyle="fullScreen" id="YHb-L6-3Cy"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="LZY-MD-77i">
+                                <rect key="frame" x="0.0" y="362" width="414" height="400"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEp-Yy-k12">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                        <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHR-gm-5KV">
+                                        <rect key="frame" x="0.0" y="50" width="414" height="50"/>
+                                        <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0A-2V-43x">
+                                        <rect key="frame" x="0.0" y="100" width="414" height="50"/>
+                                        <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Xh-Wf-Ntp">
+                                        <rect key="frame" x="0.0" y="150" width="414" height="50"/>
+                                        <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPA-8w-Osv">
+                                        <rect key="frame" x="0.0" y="200" width="414" height="50"/>
+                                        <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iM9-rU-SuA">
+                                        <rect key="frame" x="0.0" y="250" width="414" height="50"/>
+                                        <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDI-5p-xDr">
+                                        <rect key="frame" x="0.0" y="300" width="414" height="50"/>
+                                        <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="50" translatesAutoresizingMaskIntoConstraints="NO" id="e3o-0v-RHX">
+                                        <rect key="frame" x="0.0" y="350" width="414" height="50"/>
+                                        <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gBP-pc-izR">
+                                <rect key="frame" x="0.0" y="94" width="414" height="168"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZv-7e-53I">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="84"/>
+                                        <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1RP-k6-JUn">
+                                        <rect key="frame" x="0.0" y="84" width="414" height="84"/>
+                                        <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gul-tY-eob">
+                                <rect key="frame" x="0.0" y="262" width="414" height="100"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="L36-RG-cav"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LZY-MD-77i" firstAttribute="top" secondItem="gBP-pc-izR" secondAttribute="bottom" constant="100" id="B1e-hd-du5"/>
+                            <constraint firstItem="L36-RG-cav" firstAttribute="bottom" secondItem="LZY-MD-77i" secondAttribute="bottom" constant="100" id="JFr-za-gEM"/>
+                            <constraint firstItem="gBP-pc-izR" firstAttribute="trailing" secondItem="L36-RG-cav" secondAttribute="trailing" id="S0B-x8-6Nq"/>
+                            <constraint firstItem="L36-RG-cav" firstAttribute="bottom" secondItem="Lku-ou-cRZ" secondAttribute="bottom" constant="50" id="SNI-9d-7U2"/>
+                            <constraint firstItem="L36-RG-cav" firstAttribute="bottom" secondItem="Lku-ou-cRZ" secondAttribute="bottom" constant="50" id="ajI-qn-amf"/>
+                            <constraint firstItem="Lku-ou-cRZ" firstAttribute="centerX" secondItem="Aua-eT-NXa" secondAttribute="centerX" id="ckO-I2-fMx"/>
+                            <constraint firstItem="gBP-pc-izR" firstAttribute="leading" secondItem="L36-RG-cav" secondAttribute="leading" id="dwz-fY-kUK"/>
+                            <constraint firstItem="LZY-MD-77i" firstAttribute="top" secondItem="Gul-tY-eob" secondAttribute="bottom" id="gHa-G0-7yZ"/>
+                            <constraint firstItem="L36-RG-cav" firstAttribute="trailing" secondItem="LZY-MD-77i" secondAttribute="trailing" id="iZg-7K-aDy"/>
+                            <constraint firstItem="gBP-pc-izR" firstAttribute="top" secondItem="L36-RG-cav" secondAttribute="top" constant="50" id="ljZ-cJ-wiF"/>
+                            <constraint firstItem="L36-RG-cav" firstAttribute="bottom" secondItem="gBP-pc-izR" secondAttribute="bottom" constant="600" id="nMC-CZ-bLV"/>
+                            <constraint firstItem="LZY-MD-77i" firstAttribute="leading" secondItem="L36-RG-cav" secondAttribute="leading" id="o2q-Yr-k4z"/>
+                            <constraint firstItem="Gul-tY-eob" firstAttribute="centerX" secondItem="Aua-eT-NXa" secondAttribute="centerX" id="pbH-0E-sRM"/>
+                            <constraint firstItem="Gul-tY-eob" firstAttribute="top" secondItem="gBP-pc-izR" secondAttribute="bottom" id="tqM-rh-I6V"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="back" destination="Lku-ou-cRZ" id="WSW-1h-dgz"/>
+                        <outlet property="pokemonAttack" destination="aEp-Yy-k12" id="up0-Ir-deR"/>
+                        <outlet property="pokemonDefense" destination="aHR-gm-5KV" id="oxw-gn-DEX"/>
+                        <outlet property="pokemonHealth" destination="p0A-2V-43x" id="bTu-NJ-SwQ"/>
+                        <outlet property="pokemonID" destination="1RP-k6-JUn" id="neO-mu-yfz"/>
+                        <outlet property="pokemonName" destination="FZv-7e-53I" id="4fs-Vz-NQP"/>
+                        <outlet property="pokemonPic" destination="Gul-tY-eob" id="pPQ-SU-bEF"/>
+                        <outlet property="pokemonSpecialAttack" destination="6Xh-Wf-Ntp" id="d8j-2d-t5V"/>
+                        <outlet property="pokemonSpecialDefense" destination="UPA-8w-Osv" id="POL-Ab-G36"/>
+                        <outlet property="pokemonSpeed" destination="iM9-rU-SuA" id="cNk-eo-bJn"/>
+                        <outlet property="pokemonTotal" destination="JDI-5p-xDr" id="PTj-1m-R3R"/>
+                        <outlet property="pokemonTypes" destination="e3o-0v-RHX" id="ExV-CI-Y4H"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="backtoTable" modalPresentationStyle="fullScreen" id="lSE-ta-Lb7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bM7-lJ-YEy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1553.6231884057972" y="114.50892857142857"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="WgA-hq-ang"/>
+        <segue reference="YHb-L6-3Cy"/>
+        <segue reference="lSE-ta-Lb7"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Pokedex" width="361" height="129"/>
+        <image name="arrowshape.turn.up.backward" catalog="system" width="128" height="106"/>
         <image name="gridimage" width="512" height="512"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -115,6 +115,17 @@ class PokemonCollectionViewController: UICollectionViewController {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: view.frame.size.width, height: 135)
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        myIndex = indexPath.row
+        performSegue(withIdentifier: "toDetails2", sender: self)
+    }
+    
+    //@IBAction func changetoTableView (sender: UIButton!){
+
+        //performSegueWithIdentifier("toTable", sender: CollectionReusableView.pokedexbutton)
+
+    //}
 }
 
 extension UIImageView {

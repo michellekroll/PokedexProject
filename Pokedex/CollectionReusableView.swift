@@ -11,12 +11,9 @@ class CollectionReusableView: UICollectionReusableView {
         
     static let identifier = "CollectionReusableView"
     
-    private let pokedexbutton: UIButton = {
+    public let pokedexbutton: UIButton = {
         let pokedeximage = UIImage(named: "Pokedex.png") as UIImage?
         let pokebutton = UIButton(frame: CGRect(x: 70, y: 35, width: 260, height: 88))
-        //label.text = "Pokedex"
-        //label.textAlignment = .center
-        //label.textColor = .black
         pokebutton.setImage(pokedeximage, for: [])
         return pokebutton
     } ()
@@ -27,6 +24,7 @@ class CollectionReusableView: UICollectionReusableView {
         button.setImage(image, for: [])
         return button
     }()
+
     
     public func configure() {
         backgroundColor = .white
@@ -36,7 +34,7 @@ class CollectionReusableView: UICollectionReusableView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        //label.frame = bounds
+
     }
     
 }

@@ -7,12 +7,14 @@
 
 import UIKit
 
+var pokemons: [Pokemon] = PokemonGenerator.getPokemonArray()
+var myIndex = 0
+
 class PokemonViewController: UIViewController {
 
     @IBOutlet weak var pokedexTitle: UIImageView!
     @IBOutlet weak var switchtoGrid: UIButton!
     @IBOutlet var tableView: UITableView!
-    var pokemons: [Pokemon] = PokemonGenerator.getPokemonArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +67,11 @@ extension PokemonViewController: UITableViewDelegate, UITableViewDataSource {
         cell.contentView.layer.borderColor = UIColor.black.cgColor
         cell.backgroundColor = UIColor.systemGray5
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        myIndex = indexPath.row
+        performSegue(withIdentifier: "toDetails", sender: self)
     }
 }
 
