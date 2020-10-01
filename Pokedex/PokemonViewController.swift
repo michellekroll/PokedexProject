@@ -9,6 +9,7 @@ import UIKit
 
 var pokemons: [Pokemon] = PokemonGenerator.getPokemonArray()
 var myIndex = 0
+fileprivate let searchBarHeight: Int = 28
 
 class PokemonViewController: UIViewController {
 
@@ -19,7 +20,8 @@ class PokemonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        
+        let searchBar = UISearchBar(frame: CGRect(x: 0, y: 150, width: Int(UIScreen.main.bounds.width), height: searchBarHeight))
+        view.addSubview(searchBar)
     }
 
     @IBAction func toGridView(_ sender: UIButton) {

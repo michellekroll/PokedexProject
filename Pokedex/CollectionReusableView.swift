@@ -11,10 +11,11 @@ class CollectionReusableView: UICollectionReusableView {
         
     static let identifier = "CollectionReusableView"
     
-    public let pokedexbutton: UIButton = {
+    private let pokedexbutton: UIButton = {
         let pokedeximage = UIImage(named: "Pokedex.png") as UIImage?
-        let pokebutton = UIButton(frame: CGRect(x: 70, y: 35, width: 260, height: 88))
+        let pokebutton = UIButton(frame: CGRect(x: 70, y: 24, width: 260, height: 88))
         pokebutton.setImage(pokedeximage, for: [])
+        //pokebutton.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
         return pokebutton
     } ()
     

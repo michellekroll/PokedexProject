@@ -20,7 +20,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var pokemonSpeed: UILabel!
     @IBOutlet weak var pokemonTotal: UILabel!
     @IBOutlet weak var pokemonTypes: UILabel!
-    @IBOutlet weak var back: UIButton!
+    @IBOutlet weak var table: UIButton!
+    @IBOutlet weak var grid: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,12 +45,13 @@ class DetailViewController: UIViewController {
         }
     }
     
-    @IBAction func toTable(_ sender: UIButton) {
+    @IBAction func backtoTable(_ sender: UIButton) {
         performSegue(withIdentifier: "backtoTable", sender: self)
     }
-    @IBAction func toGrid(_ sender: UIButton) {
+    
+    @IBAction func backtoGrid(_ sender: UIButton) {
         performSegue(withIdentifier: "backtoGrid", sender: self)
-
+        
     }
 }
 
