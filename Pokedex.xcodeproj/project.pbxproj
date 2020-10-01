@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		172867992525A535009407BA /* tableView.png in Resources */ = {isa = PBXBuildFile; fileRef = 172867982525A534009407BA /* tableView.png */; };
+		1728679E2525AD83009407BA /* Pokedex.png in Resources */ = {isa = PBXBuildFile; fileRef = 1728679D2525AD82009407BA /* Pokedex.png */; };
 		176832B42522E1170027311F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176832B32522E1170027311F /* AppDelegate.swift */; };
 		176832B62522E1170027311F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176832B52522E1170027311F /* SceneDelegate.swift */; };
 		176832B82522E1170027311F /* PokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176832B72522E1170027311F /* PokemonViewController.swift */; };
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		172867982525A534009407BA /* tableView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tableView.png; sourceTree = "<group>"; };
+		1728679D2525AD82009407BA /* Pokedex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pokedex.png; sourceTree = "<group>"; };
 		176832B02522E1170027311F /* Pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		176832B32522E1170027311F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		176832B52522E1170027311F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 			children = (
 				176832B32522E1170027311F /* AppDelegate.swift */,
 				176832E62522E1520027311F /* pokemons.json */,
+				1728679D2525AD82009407BA /* Pokedex.png */,
+				172867982525A534009407BA /* tableView.png */,
 				17F6A00E25230DBB00859C1C /* Info.plist */,
 				176832E82522E1530027311F /* Pokemon.swift */,
 				176832E72522E1520027311F /* PokemonGenerator.swift */,
@@ -251,6 +257,8 @@
 				176832C02522E11B0027311F /* LaunchScreen.storyboard in Resources */,
 				176832E92522E1530027311F /* pokemons.json in Resources */,
 				176832BD2522E11B0027311F /* Assets.xcassets in Resources */,
+				172867992525A535009407BA /* tableView.png in Resources */,
+				1728679E2525AD83009407BA /* Pokedex.png in Resources */,
 				176832BB2522E1170027311F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,22 +11,32 @@ class CollectionReusableView: UICollectionReusableView {
         
     static let identifier = "CollectionReusableView"
     
-    private let label: UILabel = {
-        let label = UILabel()
-        label.text = "Pokedex"
-        label.textAlignment = .center
-        label.textColor = .white
-        return label
+    private let pokedexbutton: UIButton = {
+        let pokedeximage = UIImage(named: "Pokedex.png") as UIImage?
+        let pokebutton = UIButton(frame: CGRect(x: 70, y: 35, width: 260, height: 88))
+        //label.text = "Pokedex"
+        //label.textAlignment = .center
+        //label.textColor = .black
+        pokebutton.setImage(pokedeximage, for: [])
+        return pokebutton
     } ()
     
+    private let tableButton: UIButton = {
+        let image = UIImage(named: "tableView.png") as UIImage?
+        let button = UIButton(frame: CGRect(x: 334, y: 89, width: 50, height: 50))
+        button.setImage(image, for: [])
+        return button
+    }()
+    
     public func configure() {
-        backgroundColor = .systemGreen
-        addSubview(label)
+        backgroundColor = .white
+        addSubview(pokedexbutton)
+        addSubview(tableButton)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        label.frame = bounds
+        //label.frame = bounds
     }
     
 }
