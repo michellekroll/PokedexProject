@@ -23,9 +23,13 @@ class CollectionReusableView: UICollectionReusableView {
         let image = UIImage(named: "tableView.png") as UIImage?
         let button = UIButton(frame: CGRect(x: 334, y: 89, width: 50, height: 50))
         button.setImage(image, for: [])
+        //button.addTarget(self, action: #selector(backtoTableView), for: .touchUpInside)
         return button
     }()
 
+    //@objc func backtoTableView() {
+       // self.performSegue(withIdentifier: "toTable", sender: self)
+    //}
     
     public func configure() {
         backgroundColor = .white

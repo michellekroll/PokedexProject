@@ -96,19 +96,6 @@ class PokemonCollectionViewController: UICollectionViewController {
         performSegue(withIdentifier: "toDetails2", sender: self)
     }
     
-   // let pokedexbutton: UIButton = {
-     //   let pokedeximage = UIImage(named: "Pokedex.png") as UIImage?
-     //   let pokebutton = UIButton(frame: CGRect(x: 70, y: 35, width: 260, height: 88))
-     //   pokebutton.setImage(pokedeximage, for: [])
-      //  return pokebutton
-   // } ()
-    
-    
-    //@IBAction func changetoTableView (sender: UIButton!){
-
-        //performSegueWithIdentifier("toTable", sender: pokedexbutton)
-
-    //}
 }
 
 extension UIImageView {
