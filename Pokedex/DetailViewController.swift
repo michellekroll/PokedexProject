@@ -22,26 +22,27 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var pokemonTypes: UILabel!
     @IBOutlet weak var table: UIButton!
     @IBOutlet weak var grid: UIButton!
+    var detailedPokemon: Pokemon!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        pokemonName.text = pokemons[myIndex].name
-        pokemonID.text = "#" + String(pokemons[myIndex].id)
-        if let url = URL(string: pokemons[myIndex].imageUrl) {
+        pokemonName.text = detailedPokemon.name
+        pokemonID.text = "#" + String(detailedPokemon.id)
+        if let url = URL(string: detailedPokemon.imageUrl) {
             pokemonPic.load(url: url)
         }
-        pokemonAttack.text = "Attack: " + String(pokemons[myIndex].attack)
-        pokemonDefense.text = "Defense: " + String(pokemons[myIndex].defense)
-        pokemonHealth.text = "Health: " + String(pokemons[myIndex].health)
-        pokemonSpecialAttack.text = "Special Attack: " + String(pokemons[myIndex].specialAttack)
-        pokemonSpecialDefense.text = "Special Defense: " + String(pokemons[myIndex].specialDefense)
-        pokemonSpeed.text = "Speed: " + String(pokemons[myIndex].speed)
-        pokemonTotal.text = "Total: " + String(pokemons[myIndex].total)
-        if pokemons[myIndex].types.count == 1 {
-            pokemonTypes.text = "Type(s): " + pokemons[myIndex].types[0].rawValue
+        pokemonAttack.text = "Attack: " + String(detailedPokemon.attack)
+        pokemonDefense.text = "Defense: " + String(detailedPokemon.defense)
+        pokemonHealth.text = "Health: " + String(detailedPokemon.health)
+        pokemonSpecialAttack.text = "Special Attack: " + String(detailedPokemon.specialAttack)
+        pokemonSpecialDefense.text = "Special Defense: " + String(detailedPokemon.specialDefense)
+        pokemonSpeed.text = "Speed: " + String(detailedPokemon.speed)
+        pokemonTotal.text = "Total: " + String(detailedPokemon.total)
+        if detailedPokemon.types.count == 1 {
+            pokemonTypes.text = "Type(s): " + detailedPokemon.types[0].rawValue
         } else {
-            pokemonTypes.text = "Type(s): " + pokemons[myIndex].types[0].rawValue + ", " + pokemons[myIndex].types[1].rawValue
+            pokemonTypes.text = "Type(s): " + detailedPokemon.types[0].rawValue + ", " + detailedPokemon.types[1].rawValue
         }
     }
     

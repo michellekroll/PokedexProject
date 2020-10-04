@@ -8,8 +8,8 @@
 import UIKit
 
 var pokemons = PokemonGenerator.getPokemonArray()
-var myIndex = 0
 fileprivate let searchBarHeight: Int = 28
+var myIndex = 0
 
 class PokemonViewController: UIViewController {
 
@@ -19,7 +19,8 @@ class PokemonViewController: UIViewController {
     var searchPokemon = [String] ()
     var filtered : [Pokemon] = []
     var searching = false
-
+    @IBOutlet weak var advancedSearch: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
@@ -27,7 +28,10 @@ class PokemonViewController: UIViewController {
         view.addSubview(searchBar)
         searchBar.delegate = self
     }
-
+    @IBAction func toAdvancedSearch(_ sender: UIButton) {
+        performSegue(withIdentifier: "toAdvancedSearch", sender: self)
+    }
+    
     @IBAction func toGridView(_ sender: UIButton) {
         performSegue(withIdentifier: "toGrid", sender: self)
     }
@@ -48,6 +52,19 @@ class PokemonViewController: UIViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "toDetails" :
+            let destinationVC = segue.destination as! DetailViewController
+            if (searching) {
+                destinationVC.detailedPokemon = filtered[myIndex]
+            } else {
+                destinationVC.detailedPokemon = pokemons[myIndex]
+            }
+        default: break
+        }
+    }
+    
 }
 
 extension PokemonViewController: UITableViewDelegate, UITableViewDataSource {
@@ -62,23 +79,19 @@ extension PokemonViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "tablecell", for: indexPath) as! TableViewCell
-        let cellIndex = indexPath.item
-        let pokemon = pokemons[cellIndex]
+        let pokemon: Pokemon
+        if (searching) {
+            pokemon = filtered[indexPath.row]
+        } else {
+            pokemon = pokemons[indexPath.row]
+        }
         cell.contentView.layer.borderWidth = 2.0
         cell.contentView.layer.borderColor = UIColor.black.cgColor
         cell.backgroundColor = UIColor.systemGray5
-        if searching {
-            cell.tableName.text = filtered[cellIndex].name
-            cell.tableID.text = "#" + String(filtered[cellIndex].id)
-            if let url = URL(string: filtered[cellIndex].imageUrl) {
-                cell.tableImage.load(url: url)
-            }
-        } else {
-                cell.tableName.text = pokemon.name
-                cell.tableID.text = "#" + String(pokemon.id)
-                if let url = URL(string: pokemon.imageUrl) {
-                    cell.tableImage.load(url: url)
-                }
+        cell.tableName.text = pokemon.name
+        cell.tableID.text = "#" + String(pokemon.id)
+        if let url = URL(string: pokemon.imageUrl) {
+            cell.tableImage.load(url: url)
         }
         return cell
     }

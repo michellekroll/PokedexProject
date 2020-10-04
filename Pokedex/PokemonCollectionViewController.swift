@@ -93,7 +93,7 @@ class PokemonCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         myIndex = indexPath.row
-        performSegue(withIdentifier: "toDetails2", sender: self)
+        performSegue(withIdentifier: "todetails2", sender: self)
     }
     
 }
